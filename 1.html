@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Army Arms Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('./military-camouflage-army-cloth-texture-background-free-vector.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #0a0000;
+        }
+        .container {
+            text-align: center;
+            background: rgba(254, 252, 252, 0.723);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .Heading {
+            font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+            display: block;
+            position: absolute;
+            transform: translate(38%, 58%);
+            width: 800px;
+            margin-right: 589px;
+            margin-bottom: 700px;
+            background: #fff;
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: larger;
+        }
+        .header {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-form label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .login-form input {
+            width: 250px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        .login-form button {
+            width: 270px;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+        .login-form .icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Heading">
+        <h1>
+            <center> Army Arms Management System </center>
+        </h1>
+    </div>
+    <div class="container">
+        
+        <div class="login-form">
+            <label for="username"><i class="fas fa-user icon"></i>Username</label>
+            <input type="text" id="username" name="username">
+            <label for="password"><i class="fas fa-lock icon"></i>Password</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Login</button>
+        </div>
+    </div>
+</body>
+</html>

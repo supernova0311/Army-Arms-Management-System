@@ -1,0 +1,673 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('./military-camouflage-army-cloth-texture-background-free-vector.jpg');
+            background-size: cover;
+            height: 100vh;
+            color: #0a0000;
+            background-attachment: fixed;
+      }
+        .weapon_container {
+            width: 94%;
+            margin: 20px;
+            padding: 1%;
+            background-color: #f9f9f9;
+            border: 1.5px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: auto;
+            min-height: 15%;
+            max-height: 40vh;
+        }   
+
+        .weapon_header {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            margin-block: -3%;
+            
+        }
+
+        .searchbar_add_row_container {
+            margin-top: -1%;
+        }
+        
+        .searchbar input[type="search"] {
+            width: 30%;
+            height: 40px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .searchbar input[type="search"]:not(:placeholder-shown) {
+            padding-right: 15px;
+        }
+
+        .searchbar input[type="search"]::-webkit-search-cancel-button {
+            position: relative;
+            right: 2px;
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .icon-button {
+            background-color: #f9f9f9;
+            color: rgb(83, 70, 70);
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+            margin-right: 30px;
+        }
+        
+        .icon-button:hover {
+            background-color: #ccc;
+        }
+
+        .add-button {
+            background-color: #ff9900;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            float: right;
+            margin-right: 40px;
+        }
+
+        .add-form-container{
+            margin-top: auto;
+        }
+
+        .add-button:hover {
+            background-color: #e68a00;
+        }
+        form {
+    display: block;
+    margin-top: 9%;
+    unicode-bidi: isolate;
+    margin-block-end: 1em;
+}
+
+        .submit-button {
+            background-color: #ff9900;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            float: right;
+            margin-right: 40px;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            background-color: #e68a00;
+        }
+        
+        .table-container {
+            width: 94%;
+            height: 69%;
+            margin: 20px;
+            padding: 1%;
+            background-color: #f9f9f9;
+            border: 1.5px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+}
+        .table-container1 {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /* margin-top: 1%; */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="weapon_container">
+
+        <div class="weapon_header">
+            <header>
+                <center><h1>Weapons</h1></center>
+                <div class="searchbar_add_row_container">
+                    <div class="add_button">
+                        <button class="add-button">ADD</button>
+                    </div>
+                    <div class="searchbar">
+                        <button class="icon-button" id="search-button"><i class="fas fa-search"></i></button>
+                        <input type="search" id="search-input" placeholder="Search...">
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="add-form-container" style="display: none;">
+            <form>
+                <table>
+                    <tr>
+                        <th>Weapon_ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Caliber</th>
+                        <th>Manufacturer</th>
+                        <th>Acquisition_Date</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="weapon-id" placeholder="Weapon ID"></td>
+                        <td><input type="text" id="name" placeholder="Name"></td>
+                        <td>
+                            <select id="type">
+                                <option value="">Select Type</option>
+                                <option value="Rifle">Rifle</option>
+                                <option value="Pistol">Pistol</option>
+                                <option value="Machine Gun">Machine Gun</option>
+                                <option value="Sniper Rifle">Sinper Rifle</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="caliber" placeholder="Caliber"></td>
+                        <td><input type="text" id="manufacturer" placeholder="Manufacturer"></td>
+                        <td><input type="date" id="acquisition-date" placeholder="Acquisition Date"></td>
+                        <td>
+                            <select id="status">
+                                <option value="">Select Status</option>
+                                <option value="In Service">In Service</option>
+                                <option value="Under Maintenance">Under Maintenance</option>
+                                <option value="Decommissioned">Decommissioned</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div class="submit_button">
+                    <button class="submit-button" id="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Weapon_Id</th>
+                    <th>Name</th>
+                    <th>
+                        Type
+                        <div class="dropdown">
+                            <button class="dropbtn"><i class="fas fa-caret-down"></i></button>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="filterType('Rifle')">Rifle</a>
+                                <a href="#" onclick="filterType('Pistol')">Pistol</a>
+                                <a href="#" onclick="filterType('Machine Gun')">Machine Gun</a>
+                                <a href="#" onclick="filterType('Sniper Rifle')">Sniper Rifle</a>
+                                <a href="#" onclick="filterType('')">Show All</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th>Caliber</th>
+                    <th>Manufacturer</th>
+                    <th>Acquisition Date</th>
+                    <th>
+                        Status
+                        <div class="dropdown">
+                            <button class="dropbtn"><i class="fas fa-caret-down"></i></button>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="filterStatus('In Service')">In Service</a>
+                                <a href="#" onclick="filterStatus('Under Maintenance')">Under Maintenance</a>
+                                <a href="#" onclick="filterStatus('Decommissioned')">Decommissioned</a>
+                                <a href="#" onclick="filterStatus('')">Show All</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+
+        
+    <script>
+
+        // Add event listener to search button
+document.querySelector('#search-button').addEventListener('click', function() {
+    var searchInput = document.querySelector('#search-input').value;
+    var rows = document.querySelectorAll('#table-body tr');
+
+    rows.forEach(function(row) {
+        var found = false;
+        var cells = row.querySelectorAll('td');
+
+        cells.forEach(function(cell) {
+            if (cell.textContent.toLowerCase().includes(searchInput.toLowerCase())) {
+                found = true;
+            }
+        });
+
+        if (found) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
+
+// Add event listener to submit button
+document.querySelector('#submit').addEventListener('click', function() {
+    // Get input values
+    var weapon_Id = document.querySelector('#weapon-id').value;
+    var name = document.querySelector('#name').value;
+    var type = document.querySelector('#type').value;
+    var caliber = document.querySelector('#caliber').value;
+    var manufacturer = document.querySelector('#manufacturer').value;
+    var acquisitionDate = document.querySelector('#acquisition-date').value;
+    var status = document.querySelector('#status').value;
+
+       // Create a new object to hold the data
+       var data = {
+        'weapon_id': weapon_Id,
+        'name': name,
+        'type': type,
+        'caliber': caliber,
+        'manufacturer': manufacturer,
+        'acquisition_date': acquisitionDate,
+        'status': status
+    };
+
+    // Send the data to the server using an AJAX request
+    fetch('weapon_data.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+
+    // Create table row
+    var row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${weapon_Id}</td>
+        <td>${name}</td>
+        <td>${type}</td>
+        <td>${caliber}</td>
+        <td>${manufacturer}</td>
+        <td>${acquisitionDate}</td>
+        <td>${status}</td>
+        <td>${actions}
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+        </td>
+    `;
+
+    // Add row to table
+    document.querySelector('#table-body').appendChild(row);
+
+    // Clear input fields
+    document.querySelector('#weapon-id').value = '';
+    document.querySelector('#name').value = '';
+    document.querySelector('#type').value = '';
+    document.querySelector('#caliber').value = '';
+    document.querySelector('#manufacturer').value = '';
+    document.querySelector('#acquisition-date').value = '';
+    document.querySelector('#status').value = '';
+
+    // Hide add form container
+    document.querySelector('.add-form-container').style.display = 'none';
+});
+
+// Add event listener to ADD button
+document.querySelector('.add-button').addEventListener('click', function() {
+    document.querySelector('.add-form-container').style.display = 'block';
+});
+
+// Add event listener to submit button
+document.querySelector('#submit').addEventListener('click', function(event) {
+    event.preventDefault(); // prevent the default form submission behavior
+    // Get input values
+    var weapon_Id = document.querySelector('#weapon-id').value;
+    var name = document.querySelector('#name').value;
+    var type = document.querySelector('#type').value;
+    var caliber = document.querySelector('#caliber').value;
+    var manufacturer = document.querySelector('#manufacturer').value;
+    var acquisitionDate = document.querySelector('#acquisition-date').value;
+    var status = document.querySelector('#status').value;
+
+    // Create table row
+    var row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${weapon_Id}</td>
+        <td>${name}</td>
+        <td>${type}</td>
+        <td>${caliber}</td>
+        <td>${manufacturer}</td>
+        <td>${acquisitionDate}</td>
+        <td>${status}</td>
+        <td>
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+        </td>
+    `;
+
+    // Add row to table
+    document.querySelector('#table-body').appendChild(row);
+
+    // Clear input fields
+    document.querySelector('#weapon-id').value = '';
+    document.querySelector('#name').value = '';
+    document.querySelector('#type').value = '';
+    document.querySelector('#caliber').value = '';
+    document.querySelector('#manufacturer').value = '';
+    document.querySelector('#acquisition-date').value = '';
+    document.querySelector('#status').value = '';
+
+    // Hide add form container
+    document.querySelector('.add-form-container').style.display = 'none';
+});
+
+// Add event listener to filter type dropdown
+document.querySelectorAll('.dropdown-content a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        var filterType = link.textContent;
+        var rows = document.querySelectorAll('#table-body tr');
+
+        rows.forEach(function(row) {
+            var cells = row.querySelectorAll('td');
+            var found = false;
+
+            cells.forEach(function(cell) {
+                if (cell.textContent === filterType) {
+                    found = true;
+                }
+            });
+
+            if (found || filterType === 'Show All') {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Add event listener to filter status dropdown
+document.querySelectorAll('.dropdown-content a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        var filterStatus = link.textContent;
+        var rows = document.querySelectorAll('#table-body tr');
+
+        rows.forEach(function(row) {
+            var cells = row.querySelectorAll('td');
+            var found = false;
+
+            cells.forEach(function(cell) {
+                if (cell.textContent === filterStatus) {
+                    found = true;
+                }
+            });
+
+            if (found || filterStatus === 'Show All') {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Fetch data from server
+fetch('weapon_data.php')
+    .then(response => response.json())
+    .then(data => {
+        const tableBody = document.querySelector('#table-body');
+        data.forEach(rowData => {
+            const tableRow = document.createElement('tr');
+            tableRow.innerHTML = `
+                <td>${rowData.Weapon_ID}</td>
+                <td>${rowData.Name}</td>
+                <td>${rowData.Type}</td>
+                <td>${rowData.Caliber}</td>
+                <td>${rowData.Manufacturer}</td>
+                <td>${rowData.Acquisition_Date}</td>
+                <td>${rowData.Status}</td>
+                <td>
+                    <button class="edit-button"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="delete-button"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            `;
+            tableBody.appendChild(tableRow);
+
+            // Attach event listeners to edit and delete buttons
+            tableRow.querySelector('.edit-button').addEventListener('click', function() {
+                editRow(this);
+            });
+            tableRow.querySelector('.delete-button').addEventListener('click', function() {
+                deleteRow(this);
+            });
+        });
+    })
+    .catch(error => console.error('Error:', error));
+
+// Function to edit a row
+function editRow(button) {
+var row = button.parentNode.parentNode;
+var cells = row.getElementsByTagName('td');
+for (var i = 0; i < cells.length - 2; i++) {
+    var cell = cells[i];
+    if (cell.children.length === 0) {
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.value = cell.innerText;
+        cell.innerText = '';
+        cell.appendChild(input);
+    }
+}
+var typeCell = cells[2];
+if (typeCell.children.length === 0) {
+    var typeInput = document.createElement('select');
+    var typeOptions = ['Rifle', 'Pistol', 'Machine Gun'];
+    typeOptions.forEach(function(option) {
+        var opt = document.createElement('option');
+        opt.value = option;
+        opt.text = option;
+        if (typeCell.innerText === option) {
+            opt.selected = true;
+        }
+        typeInput.appendChild(opt);
+    });
+    typeCell.innerText = '';
+    typeCell.appendChild(typeInput);
+}
+var dateCell = cells[5];
+if (dateCell.children.length === 0) {
+    var dateInput = document.createElement('input');
+    dateInput.type = 'date';
+    dateInput.value = cell.innerText;
+    dateCell.innerText = '';
+    dateCell.appendChild(dateInput);
+} else {
+    // Enable the date picker
+    dateCell.children[0].type = 'date';
+}
+var statusCell = cells[6];
+if (statusCell.children.length === 0) {
+    var statusInput = document.createElement('select');
+    var statusOptions = ['In Service', 'Under Maintenance', 'Decommissioned'];
+    statusOptions.forEach(function(option) {
+        var opt = document.createElement('option');
+        opt.value = option;
+        opt.text = option;
+        if (statusCell.innerText === option) {
+            opt.selected = true;
+        }
+        statusInput.appendChild(opt);
+    });
+    statusCell.innerText = '';
+    statusCell.appendChild(statusInput);
+}
+button.innerHTML = '<i class="fas fa-save"></i>';
+button.onclick = function() {
+    saveRow(button);
+};
+}
+
+// Function to save a row
+function saveRow(button) {
+var row = button.parentNode.parentNode;
+var cells = row.getElementsByTagName('td');
+for (var i = 0; i < cells.length - 2; i++) {
+    var cell = cells[i];
+    if (cell.children.length > 0) {
+        var input = cell.children[0];
+        cell.innerText = input.value;
+    }
+}
+var typeCell = cells[2];
+if (typeCell.children.length > 0) {
+    var typeInput = typeCell.children[0];
+    typeCell.innerText = typeInput.value;
+}
+var dateCell = cells[5];
+if (dateCell.children.length > 0) {
+    var dateInput = dateCell.children[0];
+    dateCell.innerText = dateInput.value;
+    // Convert the date picker back to a normal date display
+    dateInput.type = 'text';
+}
+var statusCell = cells[6];
+if (statusCell.children.length > 0) {
+    var statusInput = statusCell.children[0];
+    statusCell.innerText = statusInput.value;
+}
+button.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+button.onclick = function() {
+    editRow(button);
+};
+}
+
+// Function to filter by type
+function filterType(type) {
+    var rows = document.querySelectorAll('#table-body tr');
+    rows.forEach(function(row) {
+        if (type === '' || row.getAttribute('data-type') === type) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+// Function to filter by status
+function filterStatus(status) {
+    var rows = document.querySelectorAll('#table-body tr');
+    rows.forEach(function(row) {
+        if (status === '' || row.getAttribute('data-status') === status) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+// Function to delete a row
+function deleteRow(button) {
+  var row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+
+// Function to filter by type
+function filterType(type) {
+  var rows = document.querySelectorAll('#weaponsTable tr');
+  rows.forEach(function(row) {
+      if (type === '' || row.getAttribute('data-type') === type) {
+          row.style.display = '';
+      } else {
+          row.style.display = 'none';
+      }
+  });
+}
+
+document.querySelectorAll('.edit-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        editRow(button);
+    });
+});
+
+document.querySelectorAll('.delete-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        deleteRow(button);
+    });
+});
+    </script>
+</body>
+</html>

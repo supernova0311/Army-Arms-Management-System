@@ -1,0 +1,159 @@
+<html>
+ <head>
+  <title>
+   Modules
+  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('./military-camouflage-army-cloth-texture-background-free-vector.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #0a0000;
+        }
+        .Heading {
+            font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+            display: block;
+            position: absolute;
+            transform: translate(38%, 58%);
+            width: 800px;
+            margin-right: 589px;
+            margin-bottom: 700px;
+            background: #fff;
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: larger;
+        }
+        
+        .logout-button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: #ffffff;
+            color: rgb(6, 5, 5);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-right: 15px;
+            margin-top: 20px;
+        }
+        .logout-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: calc(59vh - 80px);
+            padding: 50px;
+        }
+        .item {
+            background-color: white;
+            border-radius: 10px;
+            margin: 30px;
+            padding: 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .item img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        .item a {
+            color: purple;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 54px;
+            
+        }
+  </style>
+ </head>
+ <body>
+    <div class="Heading">
+        <h1>
+            <center> Army Arms Management System </center>
+        </h1>
+        
+    </div>
+
+    <button class="logout-button">
+        Log Out
+       </button>
+   
+  <div class="container">
+   <div class="row">
+    <div class="item">
+        <center>
+            <a href="weapons.html">
+                <img alt="Two crossed rifles" height="100" src="./Weapon.png"" width="100"/>
+                 Weapons
+            </a>
+        </center>
+    </div>
+    <div class="item">
+        <center>
+            <a href="Soldiers.html">
+                <img alt="Soldier in action" height="100" src="./Soldier.png" width="100"/>
+                Soldiers
+            </a>
+        </center>
+    </div>
+    <div class="item">
+        <center>
+            <a href="Maintenance.html">
+                <img alt="Maintenance tools and server" height="100" src="./Maintenance Records.png" width="100"/>
+                Maintenance Records
+            </a>    
+        </center>
+    </div>
+   </div>
+   <div class="row">
+    <div class="item">
+        <center>
+            <a href="WeaponDistribution.html">
+                <img alt="Two soldiers exchanging weapons" height="100" src="./weapon distribution.jpg" width="100"/>
+                 Weapons Distribution
+            </a>
+        </center>
+    </div>
+    <div class="item">
+        <center>
+            <a href="inspections.html">
+                <img alt="Officer inspecting weapons" height="100" src="./weapon inspection.jpg" width="100"/>
+                Inspections
+            </a>
+        </center>
+       
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
